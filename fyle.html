@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Project</title>
+	<style type="text/css">
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+	.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;}
+  .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.mystyle {
+  width: 100%;
+  padding: 25px;
+  background-color: coral;
+  color: white;
+  font-size: 25px;
+  box-sizing: border-box;
+}
+.ann{
+	float:center;
+	text-align: center
+}
+.content2{
+	text-align: center;
+}
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}    
+
+td{
+	background-color: beige;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body><p>
+	<div class="container">
+			<img style="float:right; height: 230px; width:170px;"src="https://dumielauxepices.net/sites/default/files/fern-clipart-globe-604199-3787043.png">
+		<h1>Looking for a <br>Lollipop alternative?</h1><br><h4>A lollipop is a type of sugar candy usually consisting <br>of hard candy mounted on a stick and intended for sucking or licking.</h4><br>
+		<button class="btn btn-primary btn-lg">Primary CTA</button>
+		     <button class="btn btn-lg active">Secondary CTA</button>
+	</div>
+	<br><br>
+	<div class="container">
+		<div class="jumbotron">
+			<h2 style="float: center; text-align: center;">This is a heading <br>in two lines.</h2><br>
+			<div class="container" style="background-color: white;">
+				<table border="2px;"cellspacing="150px;" cellpadding="51px;" class="table table-condensed"> 
+				<tr><th></th><th>Lollipop</th>  <th>Icecandy</th></tr>
+				<tr><th>Lorem Ipsum1</th><td>&#9989;</td>  <td>&#9989;</td></tr>
+				<tr><th>Lorem Ipsum2</th><td>&#9989;</td>  <td>&#9989;</td></tr>
+				<tr><th>Lorem Ipsum3</th><td>&#9989;</td>  <td>&#9989;</td></tr>
+				<tr><th>Lorem Ipsum4</th><td>&#9989;</td>  <td>&#x274C;</td></tr>
+				<tr><th>Lorem Ipsum5</th><td>&#9989;</td>  <td>&#x274C;</td></tr>
+				<tr><th>Lorem Ipsum6</th><td>&#9989;</td>  <td>&#x274C;</td></tr>
+				<tr><th>Lorem Ipsum7</th><td>&#9989;</td>  <td>&#x274C;</td></tr>
+				<tr><th>Lorem Ipsum8</th><td>&#9989;</td>  <td>&#9989;</td></tr>
+				<tr><th>Lorem Ipsum9</th><td>&#9989;</td>  <td>&#9989;</td></tr>
+				<tr><th>Lorem Ipsum10</th><td>&#9989;</td>  <td>&#9989;</td></tr>
+				
+			</table></div>
+		</div><br>
+		 <h2 style="float: center; text-align: center;">Compare Pricing today!</h2>
+		 <h4 style="float: center; text-align: center;">Compare the price of lollipop and icecandy per <u style="color: royalblue;">serving</u><br><br>
+		 	
+		 		<button id= "btn25"class="btn btn-lg">25 Servings</button> <button id="btn50"class="btn btn-lg">50 Servings</button><button id="btn100"class="btn btn-lg btn-active">100 Servings</button><button id="btn200"class="btn btn-lg">200 Servings</button>
+		 	
+	</div>
+	</p>
+	<br><br>
+	<div class="ann"><span> <b>Monthly</b> <label class="switch">
+  <input type="checkbox" onclick="month()" >
+  <span class="slider round"></span></span></div> 
+</label>  
+ <div class="ann"><span> <b>Annual</b> (50% off) <label class="switch">
+  <input type="checkbox" onclick="annual()" >
+  <span class="slider round"></span>
+</label> </span></div>
+<br><br>
+		
+	
+	<div class="container">
+		
+	<p style="float: center; background-color: white;color: black;">
+		<table id="cont25" class="table table-condensed" border="2px"; cellpadding="20px;">
+			<tr>
+				<th>lollipop</th>
+				<th>Icecandy</th>
+				<th>Your savings<br>with lollipop</th>
+				<tr>
+					<td rowspan="2"><b>$25</b> per month<br>For 25 Servings</td>
+					<td rowspan="2"><b>$50</b>per month<br>For 25 Servings.</td>
+					<td rowspan="2"><b style="color: blue;">$25</b><br>per month </td></tr>
+					
+				</p></div>
+				<div class="container">
+		
+	<p style="float: center; background-color: white;color: black;">
+		<table id="cont50" class="table table-condensed" border="2px"; cellpadding="20px;">
+			<tr>
+				<th>lollipop</th>
+				<th>Icecandy</th>
+				<th>Your savings<br>with lollipop</th>
+				<tr>
+					<td rowspan="2"><b>$50</b> per month<br>For 50 Servings</td>
+					<td rowspan="2"><b>$100</b>per month<br>For 50 Servings.</td>
+					<td rowspan="2"><b style="color: blue;">$50</b><br>per month </td></tr>
+					
+				</p></div>
+				<div class="container">
+		
+	<p style="float: center; background-color: white;color: black;">
+		<table id="cont100" class="table table-condensed" border="2px"; cellpadding="20px;">
+			<tr>
+				<th>lollipop</th>
+				<th>Icecandy</th>
+				<th>Your savings<br>with lollipop</th>
+				<tr>
+					<td rowspan="2"><b>$100</b> per month<br>For 100 Servings</td>
+					<td rowspan="2"><b>$200</b>per month<br>For 100 Servings.</td>
+					<td rowspan="2"><b style="color: blue;">$100</b><br>per month </td></tr>
+					
+				</p></div>
+				
+		
+	<p style="float: center; background-color: white;color: black;">
+		<table id="cont200" class="table table-condensed" border="2px"; cellpadding="20px;">
+			<tr>
+				<th>lollipop</th>
+				<th>Icecandy</th>
+				<th>Your savings<br>with lollipop</th></tr>
+				<tr>
+					<td rowspan="2"><b>$200</b> per month<br>For 200 Servings</td>
+					<td rowspan="2"><b>$400</b>per month<br>For 200 Servings.</td>
+					<td rowspan="2"><b style="color: blue;">$200</b><br>per month </td></tr>
+					
+				</p></div></table>
+<br><br>
+<div class="container" id="annual1">
+		
+	<p style="float: center; background-color: white;color: black;">
+		<table id="acont25" class="table table-condensed" border="2px"; cellpadding="20px;">
+			<tr>
+				<th>lollipop</th>
+				<th>Icecandy</th>
+				<th>Your savings<br>with lollipop</th>
+				<tr>
+					<td rowspan="2"><b>$15</b> per year<br>For 25 Servings</td>
+					<td rowspan="2"><b>$30</b>per year<br>For 25 Servings.</td>
+					<td rowspan="2"><b style="color: blue;">$15</b><br>per month </td></tr>
+					</tr></table>
+				</p></div>
+				<div class="container">
+		
+	<p style="float: center; background-color: white;color: black;">
+		<table id="acont50" class="table table-condensed" border="2px"; cellpadding="20px;">
+			<tr>
+				<th>lollipop</th>
+				<th>Icecandy</th>
+				<th>Your savings<br>with lollipop</th>
+				</tr><tr>
+					<td rowspan="2"><b>$25</b> per year<br>For 50 Servings</td>
+					<td rowspan="2"><b>$50</b>per year<br>For 50 Servings.</td>
+					<td rowspan="2"><b style="color: blue;">$25</b><br>per month </td></tr>
+					</table>
+				</p></div>
+				<div class="container">
+		
+	<p style="float: center; background-color: white;color: black;">
+		<table id="acont100" class="table table-condensed" border="2px"; cellpadding="20px;">
+			<tr>
+				<th>lollipop</th>
+				<th>Icecandy</th>
+				<th>Your savings<br>with lollipop</th></tr>
+				<tr>
+					<td rowspan="2"><b>$50</b> per year<br>For 100 Servings</td>
+					<td rowspan="2"><b>$100</b>per year<br>For 100 Servings.</td>
+					<td rowspan="2"><b style="color: blue;">$50</b><br>per month </td></tr>
+					</table>
+				</p></div>
+				
+		
+	<p style="float: center; background-color: white;color: black;">
+		<table id="acont200" class="table table-condensed" border="2px"; cellpadding="20px;">
+			<tr>
+				<th>lollipop</th>
+				<th>Icecandy</th>
+				<th>Your savings<br>with lollipop</th></tr>
+				<tr>
+					<td rowspan="2"><b>$100</b> per year<br>For 200 Servings</td>
+					<td rowspan="2"><b>$200</b>per year<br>For 200 Servings.</td>
+					<td rowspan="2"><b style="color: blue;">$100</b><br>per month </td></tr>
+					</p></table></div>
+<div class="content2"><h2>Here's what our customers have to say. </h2><br>
+	<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT5K-jcOh0korWEf4lugFM4BDfYMPoViF_sK0ObO3jbfr7XZUg" style="width:12%;height:12%;border-radius: 185px; float: left; ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br> <br><h5>Raja Ram</h5>Tip World.
+</div>
+
+<div class="mySlides fade">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzf7K2g_zJ3mCMB88o52QwtACXrgDVUfeiWfdNuZR1MmtUGbsW" style="width:14%;height:17%;border-radius: 185px; float: left; ">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br><br> <h5>Mohan Raj</h5>The Times Of India.
+</div>
+
+<div class="mySlides fade">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbFHbgK2Je1M_NDSslBdRpSoy3p6tfMqlE9TXHADxiGmqKldJs" style="width:12%;height:12%;border-radius: 185px; float: left; ">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br><br> <h5>Shivam Singh</h5>Hindustan Times.
+</div>
+
+</div><br><br><br><br>
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+<br><br><br><br>
+<div class="container-fluid">
+	<div class="jumbotron">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjGF1Ne0vcSo-QmW2_TjPvxaw9NoatowZM6K74HjCZcD7TnWgN7Q" style="float: right;">
+
+	<h3 style="text-align: left;">Loved by users,<br>Recommended By Experts.</h3><br>
+	Lorem ipsum is a dummy text used to replace text in some areas just for the purpose of an example.<br> The text is derived from Cicero's De finibus bonorum et malorum (On the Ends of Goods and Evils, <br>sometimes the title is translated as [About] The Purposes of Good and Evil ).<br> The words "Lorem ipsum..." make no sense.<br><br>
+	<button class="btn btn-primary btn-lg" style="margin-left: 30px;">Primary CTA</button>
+</div>
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2500); 
+}
+</script>
+
+</div>
+<script type="text/javascript">
+	function myFunction() {
+  var element = document.getElementById("myDIV");
+
+  if (element.classList) { 
+    element.classList.toggle("mystyle");
+  } else {
+    var classes = element.className.split(" ");
+    var i = classes.indexOf("mystyle");
+
+    if (i >= 0) 
+      classes.splice(i, 1);
+    else 
+      classes.push("mystyle");
+      element.className = classes.join(" "); 
+  }
+}
+</script>
+<script>
+	function month(){
+$(document).ready(function(){
+  $("#btn25").click(function(){
+    $("#cont25").show();
+    $("#cont50").hide();
+    $("#cont100").hide();
+    $("#cont200").hide();
+      $("#acont25").hide();
+    $("#acont50").hide();
+    $("#acont100").hide();
+    $("#acont200").hide();
+  });
+  $("#btn50").click(function(){
+   $("#cont25").hide();
+    $("#cont50").show();
+    $("#cont100").hide();
+    $("#cont200").hide();
+      $("#acont25").hide();
+    $("#acont50").hide();
+    $("#acont100").hide();
+    $("#acont200").hide();
+  });
+  $("#btn100").click(function(){
+   $("#cont25").hide();
+    $("#cont50").hide();
+    $("#cont100").show();
+    $("#cont200").hide();
+      $("#acont25").hide();
+    $("#acont50").hide();
+    $("#acont100").hide();
+    $("#acont200").hide();
+  });
+  $("#btn200").click(function(){
+   $("#cont25").hide();
+    $("#cont50").hide();
+    $("#cont100").hide();
+    $("#cont200").show();
+      $("#acont25").hide();
+    $("#acont50").hide();
+    $("#acont100").hide();
+    $("#acont200").hide();
+  });
+});}
+function annual(){
+$(document).ready(function(){
+  $("#btn25").click(function(){
+    $("#acont25").show();
+    $("#acont50").hide();
+    $("#acont100").hide();
+    $("#acont200").hide();
+    $("#cont25").hide();
+    $("#cont50").hide();
+    $("#cont100").hide();
+    $("#cont200").hide();
+  });
+  $("#btn50").click(function(){
+   $("#acont25").hide();
+    $("#acont50").show();
+    $("#acont100").hide();
+    $("#acont200").hide();
+    $("#cont25").hide();
+    $("#cont50").hide();
+    $("#cont100").hide();
+    $("#cont200").hide();
+  });
+  $("#btn100").click(function(){
+   $("#acont25").hide();
+    $("#acont50").hide();
+    $("#acont100").show();
+    $("#acont200").hide();
+    $("#cont25").hide();
+    $("#cont50").hide();
+    $("#cont100").hide();
+    $("#cont200").hide();
+  });
+  $("#btn200").click(function(){
+   $("#acont25").hide();
+    $("#acont50").hide();
+    $("#acont100").hide();
+    $("#acont200").show();
+    $("#cont25").hide();
+    $("#cont50").hide();
+    $("#cont100").hide();
+    $("#cont200").hide();
+  });
+});}
+</script>
+</body>
+</html>
